@@ -1,9 +1,9 @@
 {
-  "Projects": {
-    "projects": "projects.json",
-    "projectById": "projects/{id}.json"
-  },
-  "Users": {},
-  "Items": {},
-  "Filters": {}
+	"Projects": {
+		"projects": "projects.json",
+		"projectById": "projects/{id}.json"
+	},
+	"Users": {},
+	"Items": {},
+	"Filters": {}
 }

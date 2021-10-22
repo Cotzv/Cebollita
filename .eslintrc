@@ -6,8 +6,7 @@
         "no-console": "off",
         "func-names": "off",
         "no-process-exit": "off",
-        "object-shorthand": "off",
-        "indent": ["error", 4]
+        "object-shorthand": "off"
     },
     "plugins": ["prettier"]
 }

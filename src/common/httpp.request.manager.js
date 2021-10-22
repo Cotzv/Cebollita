@@ -6,39 +6,39 @@ class HttpRequestManager {
         let instance = null;
 
         switch (isAuthValid) {
-        case false:
-            instance = axios.create(instances.InvalidCredentials);
-            break;
-        default:
-            instance = axios.create(instances.ValidCredentials);
-            break;
+            case false:
+                instance = axios.create(instances.InvalidCredentials);
+                break;
+            default:
+                instance = axios.create(instances.ValidCredentials);
+                break;
         }
 
         switch (verb) {
-        case 'GET':
+            case 'GET':
                 return instance.get(
-                `${instance.defaults.baseURL}/api/${uri}`,
+                    `${instance.defaults.baseURL}/api/${uri}`,
                     instance.defaults.auth
-            );
-        case 'POST':
+                );
+            case 'POST':
                 return axios.post(
-                `${instance.defaults.baseURL}/api/${uri}`,
+                    `${instance.defaults.baseURL}/api/${uri}`,
                     data,
-                instance.defaults.auth
-            );
-        case 'PUT':
-            return instance.post(
-                `${instance.defaults.baseURL}/api/${uri}`,
+                    instance.defaults.auth
+                );
+            case 'PUT':
+                return instance.post(
+                    `${instance.defaults.baseURL}/api/${uri}`,
                     data,
-                instance.defaults.auth
-            );
-        case 'DELETE':
-            return instance.delete(
-                `${instance.defaults.baseURL}/api/${uri}`,
+                    instance.defaults.auth
+                );
+            case 'DELETE':
+                return instance.delete(
+                    `${instance.defaults.baseURL}/api/${uri}`,
                     instance.defaults.auth
                 );
             default:
-            break;
+                break;
         }
     }
 }
