@@ -1,8 +1,8 @@
-import axios from "axios";
-import instances from "../../resources/instances.json";
+import axios from 'axios';
+import instances from '../resources/instances.json';
 
 class HttpRequestManager {
-  static makeRequest(verb, uri, data = "", isAuthValid = true) {
+  static makeRequest(verb, uri, data = '', isAuthValid = true) {
     let instance = null;
 
     switch (isAuthValid) {
@@ -15,24 +15,24 @@ class HttpRequestManager {
     }
 
     switch (verb) {
-      case "GET":
+      case 'GET':
         return instance.get(
           `${instance.defaults.baseURL}/api/${uri}`,
           instance.defaults.auth
         );
-      case "POST":
+      case 'POST':
         return axios.post(
           `${instance.defaults.baseURL}/api/${uri}`,
           data,
           instance.defaults.auth
         );
-      case "PUT":
+      case 'PUT':
         return instance.post(
           `${instance.defaults.baseURL}/api/${uri}`,
           data,
           instance.defaults.auth
         );
-      case "DELETE":
+      case 'DELETE':
         return instance.delete(
           `${instance.defaults.baseURL}/api/${uri}`,
           instance.defaults.auth
@@ -40,7 +40,6 @@ class HttpRequestManager {
       default:
         break;
     }
-    return;
   }
 }
 
