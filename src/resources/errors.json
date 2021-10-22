@@ -1,0 +1,6 @@
+{
+    "Authentication": {
+        "ErrorMessage": "Not Authenticated",
+        "ErrorCode": 102
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "validCredentials": {
+        "baseUrl": "https://todo.ly",
+        "auth": { "username": "serqio.kay@gmail.com", "password": "1234567890" }
+    },
+    "invalidCredentials": {
+        "baseUrl": "https://todo.ly",
+        "auth": { "username": "serqio.kay@gmail.com", "password": "7894561230" }
+    }
+}

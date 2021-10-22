@@ -1,0 +1,4 @@
+{
+    "projects": "projects.json",
+    "projectById": "projects/{id}.json"
+}

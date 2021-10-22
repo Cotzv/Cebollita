@@ -1,0 +1,11 @@
+{
+    "ProjectById": {
+        "POST": {
+            "Content": "My New Project",
+            "Icon": "4"
+        },
+        "PUT": {
+            "Icon": "5"
+        }
+    }
+}
