@@ -1,0 +1,32 @@
+{
+  "name": "Cebollita",
+  "version": "1.0.0",
+  "description": "We are \"Cebollita\" team and we will make an API testing for this website: [todo.ly](http://www.todo.ly).",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrRoaming/Cebollita.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrRoaming/Cebollita/issues"
+  },
+  "homepage": "https://github.com/MrRoaming/Cebollita#readme",
+  "dependencies": {
+    "axios": "^0.23.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3"
+  }
+}
