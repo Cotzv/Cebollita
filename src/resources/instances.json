@@ -1,0 +1,16 @@
+{
+    "ValidCredentials": {
+        "baseURL": "https://todo.ly",
+        "auth": {
+            "username": "marcandeacabrera@gmail.com",
+            "password": "12345nacram."
+        }
+    },
+    "InvalidCredentials": {
+        "baseURL": "https://todo.ly",
+        "auth": {
+            "username": "marcandeacabrera@gmail.com",
+            "password": "12345nacram."
+        }
+    }
+}

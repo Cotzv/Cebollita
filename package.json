@@ -1,5 +1,5 @@
 {
-  "name": "Cebollita",
+  "name": "cebollita",
   "version": "1.0.0",
   "description": "We are \"Cebollita\" team and we will make an API testing for this website: [todo.ly](http://www.todo.ly).",
   "main": "index.js",
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   },
   "homepage": "https://github.com/MrRoaming/Cebollita#readme",
   "dependencies": {
-    "axios": "^0.23.0"
+    "axios": "^0.23.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -44,6 +47,8 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4"
