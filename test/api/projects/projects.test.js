@@ -21,10 +21,10 @@ describe("proyect test", () => {
                 expect(response.statusText).toMatch("OK");
                 expect(response.data).not.toEqual(errors.Authentication);
                 id = response.data.Id;
+                loggers.error(projectsURI);
             })
             .catch(function (error) {
                 //console.log(error);
-                loggers.info(error);
                 throw error;
             });
     }, 18000);
