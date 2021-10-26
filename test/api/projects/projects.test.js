@@ -154,4 +154,20 @@ describe("proyect test", () => {
                 throw error;
             });
     }, 20000);
+
+    test('Verify that 200 OK status code resutl when a GET done items of a proyect when request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "GET",
+            endPoints.getProyectsDoneItems.replace("{id}", "3951526")
+        )
+            .then(function (response) {
+                expect(response.status).toBe(200);
+                expect(response.statusText).toMatch("OK");
+                expect(response.data).not.toEqual(errors.Authentication);
+            })
+            .catch(function (error) {
+                //console.log(error);
+                throw error;
+            });
+    }, 20000);
 });
