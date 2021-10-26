@@ -1,0 +1,23 @@
+{
+    "name": "practicing",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.15.7",
+        "@babel/core": "^7.15.8",
+        "@babel/preset-env": "^7.15.8",
+        "@babel/register": "^7.15.3",
+        "jest": "^27.3.1",
+        "winston": "^3.3.3"
+    },
+    "dependencies": {
+        "axios": "^0.23.0"
+    }
+}
