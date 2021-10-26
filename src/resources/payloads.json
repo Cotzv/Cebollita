@@ -4,8 +4,38 @@
             "Content": "My New Project",
             "Icon": "4"
         },
+
         "PUT": {
             "Icon": "5"
+        },
+
+        "Invalid": {
+            "NegativeNumber": {
+                "Icon": "-5"
+            },
+
+            "DecimalNumber": {
+                "Icon": "5.10"
+            },
+
+            "Words": {
+                "Icon": "Icon"
+            },
+
+            "AlphaNumeric": {
+                "Icon": "IconNumber5098@!@#$%^*"
+            },
+
+            "Empty": {
+                "Icon": ""
+            }
+        }
+    },
+    "Users": {
+        "Create": {
+            "Email": "serqi@no-reply.com",
+            "Password": "123456",
+            "FullName": "Serqiiiooooo"
         }
     }
 }

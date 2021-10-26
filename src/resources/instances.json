@@ -6,5 +6,9 @@
     "invalidCredentials": {
         "baseUrl": "https://todo.ly",
         "auth": { "username": "serqio.kay@gmail.com", "password": "7894561230" }
+    },
+    "createAndDeleteUser": {
+        "baseUrl": "https://todo.ly",
+        "auth": { "username": "serq@no-reply.com", "password": "123456" }
     }
 }

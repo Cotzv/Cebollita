@@ -1,7 +1,9 @@
-import HttpRequestManager from "../../src/common/api/http.request.manager";
-import endPoints from "../../src/resources/endpoints.json";
-import errors from "../../src/resources/errors.json";
-import payloads from "../../src/resources/payloads.json";
+import HttpRequestManager from "../../../src/common/api/http.request.manager";
+import endPoints from "../../../src/resources/endpoints.json";
+import errors from "../../../src/resources/errors.json";
+import payloads from "../../../src/resources/payloads.json";
+import loggers from "../../../utils/loggers";
+
 const projectsURI = endPoints.projects;
 let projectByIdURI = endPoints.projectById;
 let postId = "";
@@ -21,10 +23,11 @@ describe("proyect test", () => {
                 id = response.data.Id;
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
+                loggers.info(error);
                 throw error;
             });
-    });
+    }, 18000);
     afterAll(() => {
         return HttpRequestManager.makeRequest(
             "DELETE",
@@ -36,7 +39,8 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
+                loggers.error(error);
                 throw error;
             });
     }, 18000);
@@ -49,7 +53,8 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
+                loggers.error(error);
                 throw error;
             });
     }, 20000);
@@ -67,12 +72,12 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 throw error;
             });
     }, 20000);
 
-    test('Verify that 200 OK status code resutl when a PUT request "/projects.json" endpoint is executed ', () => {
+    test('Verify that 200 OK status code resutl when a PUT request "/projects/{id}.json" endpoint is executed ', () => {
         return HttpRequestManager.makeRequest(
             "PUT",
             projectByIdURI.replace("{id}", id),
@@ -85,7 +90,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -102,7 +107,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -115,7 +120,7 @@ describe("proyect test", () => {
                 expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
-                console.log(error);
+                //console.log(error);
                 throw error;
             });
     }, 20000);
