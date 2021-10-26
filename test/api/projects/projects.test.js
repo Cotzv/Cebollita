@@ -40,7 +40,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 //console.log(error);
-                loggers.error(error);
                 throw error;
             });
     }, 18000);
@@ -54,7 +53,22 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 //console.log(error);
-                loggers.error(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that 200 OK status code resutl when a GET of a proyect the request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "GET",
+            projectByIdURI.replace("{id}", "3951526")
+        )
+            .then(function (response) {
+                expect(response.status).toBe(200);
+                expect(response.statusText).toMatch("OK");
+                expect(response.data).not.toEqual(errors.ThereIsNoProyect);
+            })
+            .catch(function (error) {
+                //console.log(error);
                 throw error;
             });
     }, 20000);
