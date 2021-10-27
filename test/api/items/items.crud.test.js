@@ -6,6 +6,7 @@ import logger from "../../../utils/loggers";
 
 const itemsURI = endpoints.items;
 let itemByIdURI = endpoints.itemById;
+let rootItemByIdURI = endpoints.rootItemById;
 let id = '';
 let postId = '';
 
@@ -23,7 +24,7 @@ describe ("Items CRUD Tests", ()=> {
             logger.error(error);
             throw error;
         })
-    }, 10000)
+    }, 20000)
 
     afterAll(()=> {
         return HttpRequestManager.makeRequest('DELETE', itemByIdURI.replace('{id}', postId))
@@ -36,7 +37,7 @@ describe ("Items CRUD Tests", ()=> {
             logger.error(error);
             throw error;
         })
-    }, 10000)
+    }, 20000)
 
     test('Verify that a 200 OK status code results when a GET request to “/items.json” endpoint is executed.', () => {
         return HttpRequestManager.makeRequest('GET', itemsURI)
@@ -49,7 +50,7 @@ describe ("Items CRUD Tests", ()=> {
             logger.error(error);
             throw error;
         })
-    }, 10000)
+    }, 20000)
     
     test('Verify that a 200 OK status code results when a POST request to “/items.json” endpoint is executed.', () => {
         return HttpRequestManager.makeRequest('POST', itemsURI, payloads.ItemById.POST)
@@ -63,7 +64,7 @@ describe ("Items CRUD Tests", ()=> {
             logger.error(error);
             throw error;
         })
-    }, 10000)
+    }, 20000)
     
     test('Verify that a 200 OK status code results when a PUT request to “/items/{id}.json” endpoint is executed.', () => {
         return HttpRequestManager.makeRequest('PUT', itemByIdURI.replace('{id}', id), payloads.ItemById.PUT)
@@ -76,7 +77,7 @@ describe ("Items CRUD Tests", ()=> {
             logger.error(error);
             throw error;
         })
-    }, 10000)
+    }, 20000)
     
     test('Verify that a 200 OK status code results when a DELETE request to “/items/{id}.json” endpoint is executed.', () => {
         return HttpRequestManager.makeRequest('DELETE', itemByIdURI.replace('{id}', id))
@@ -89,5 +90,18 @@ describe ("Items CRUD Tests", ()=> {
             logger.error(error);
             throw error;
         })
-    }, 10000)
+    }, 20000)
+
+    test('Verify that a 200 OK status code results when a GET request to “/items/{id}/RootItem.json” endpoint is executed.', () => {
+        return HttpRequestManager.makeRequest('GET', rootItemByIdURI.replace('{id}', id))
+        .then(function(response){
+            expect(response.status).toBe(200);
+            expect(response.statusText).toMatch('OK');
+            expect(response.data).not.toEqual(errors.Authentication);
+        })
+        .catch(function (error) {
+            logger.error(error);
+            throw error;
+        })
+    }, 20000)
 })
