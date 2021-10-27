@@ -7,5 +7,15 @@
         "PUT": {
             "Icon": "5"
         }
+    },
+    "UserById": {
+        "POST": {
+            "Email": "testing@no-reply.com",
+            "FullName": "Testing Purposes",
+            "Password": "testing"
+        },
+        "PUT": {
+            "Email": "testingEdited@no-reply.com"
+        }
     }
 }

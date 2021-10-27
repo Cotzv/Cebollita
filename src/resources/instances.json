@@ -2,15 +2,15 @@
     "ValidCredentials": {
         "baseURL": "https://todo.ly",
         "auth": {
-            "username": "marcandeacabrera@gmail.com",
-            "password": "12345nacram."
+            "username": "test@no-reply.com",
+            "password": "test"
         }
     },
     "InvalidCredentials": {
         "baseURL": "https://todo.ly",
         "auth": {
-            "username": "marcandeacabrera@gmail.com",
-            "password": "12345nacram."
+            "username": "te@no-reply.com",
+            "password": "test"
         }
     }
 }
