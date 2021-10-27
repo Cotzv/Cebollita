@@ -4,9 +4,14 @@
             "Content": "My New Project",
             "Icon": "4"
         },
+        "MissingContent": {
+            "Content": "",
+            "Icon": "4"
+        },
 
         "PUT": {
-            "Icon": "5"
+            "Icon": "5",
+            "EmptyContent": ""
         },
 
         "Invalid": {
