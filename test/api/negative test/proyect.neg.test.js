@@ -85,7 +85,7 @@ describe("negative test", () => {
             });
     }, 20000);
 
-    test('Verify that shows the required error with an alphabetic caracter value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
+    test('Verify that shows the required error with an alfabetic caracter value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
         return HttpRequestManager.makeRequest(
             "PUT",
             projectByIdURI.replace("{id}", "a"),
@@ -103,7 +103,7 @@ describe("negative test", () => {
             });
     }, 20000);
 
-    test('Verify that shows the required error with an alphanumeric caracter value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
+    test('Verify that shows the required error with an alfanumeric caracter value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
         return HttpRequestManager.makeRequest(
             "PUT",
             projectByIdURI.replace("{id}", "12*S"),
@@ -114,6 +114,50 @@ describe("negative test", () => {
                 expect(response.status).toBe(200);
                 expect(response.statusText).toMatch("OK");
                 expect(response.data).not.toEqual(errors.Authentication);
+            })
+            .catch(function (error) {
+                //console.log(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that shows the required error with a non valid ID when DELETE request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "DELETE",
+            projectByIdURI.replace("{id}", "2")
+        )
+            .then(function (response) {
+                expect(response.data).toEqual(errors.InvalidID);
+            })
+            .catch(function (error) {
+                //console.log(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that shows the required error with a alfabetic value ID when DELETE request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "DELETE",
+            projectByIdURI.replace("{id}", "a")
+        )
+            .then(function (response) {
+                expect(response.data).toEqual(errors.InvalidID);
+            })
+            .catch(function (error) {
+                //console.log(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that shows the required error with an unvalid authentication when DELETE request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "DELETE",
+            projectByIdURI.replace("{id}", "3951526"),
+            null,
+            false
+        )
+            .then(function (response) {
+                expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
                 //console.log(error);

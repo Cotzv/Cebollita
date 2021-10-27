@@ -14,5 +14,9 @@
     "ShortNameProject": {
         "ErrorMessage": "Too Short Project Name",
         "ErrorCode": 305
+    },
+    "InvalidID": {
+        "ErrorMessage": "Invalid Id",
+        "ErrorCode": 301
     }
 }
