@@ -1,7 +1,8 @@
 import HttpRequestManager from "../../../src/common/api/http.request.manager";
 import endpoints from "../../../src/resources/endpoints.json";
 import errors from "../../../src/resources/errors.json";
-import payloads from "../../../src/resources/payloads.json";
+import payloads from "../../../src/resources/payloads.items.json";
+import logger from "../../../utils/loggers";
 
 const itemsURI = endpoints.items;
 let itemByIdURI = endpoints.itemById;
@@ -19,10 +20,10 @@ describe ("Items CRUD Tests", ()=> {
             id = response.data.Id;
         })
         .catch(function (error) {
-            console.log(error);
+            logger.error(error);
             throw error;
         })
-    }, 1000)
+    }, 10000)
 
     afterAll(()=> {
         return HttpRequestManager.makeRequest('DELETE', itemByIdURI.replace('{id}', postId))
@@ -32,10 +33,10 @@ describe ("Items CRUD Tests", ()=> {
             expect(response.data).not.toEqual(errors.Authentication);
         })
         .catch(function (error) {
-            console.log(error);
+            logger.error(error);
             throw error;
         })
-    }, 1000)
+    }, 10000)
 
     test('Verify that a 200 OK status code results when a GET request to “/items.json” endpoint is executed.', () => {
         return HttpRequestManager.makeRequest('GET', itemsURI)
@@ -45,7 +46,7 @@ describe ("Items CRUD Tests", ()=> {
             expect(response.data).not.toEqual(errors.Authentication);
         })
         .catch(function (error) {
-            console.log(error);
+            logger.error(error);
             throw error;
         })
     }, 10000)
@@ -59,7 +60,7 @@ describe ("Items CRUD Tests", ()=> {
             postId = response.data.Id;
         })
         .catch(function (error) {
-            console.log(error);
+            logger.error(error);
             throw error;
         })
     }, 10000)
@@ -72,7 +73,7 @@ describe ("Items CRUD Tests", ()=> {
             expect(response.data).not.toEqual(errors.Authentication);
         })
         .catch(function (error) {
-            console.log(error);
+            logger.error(error);
             throw error;
         })
     }, 10000)
@@ -85,7 +86,7 @@ describe ("Items CRUD Tests", ()=> {
             expect(response.data).not.toEqual(errors.Authentication);
         })
         .catch(function (error) {
-            console.log(error);
+            logger.error(error);
             throw error;
         })
     }, 10000)
