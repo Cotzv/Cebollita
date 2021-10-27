@@ -42,5 +42,14 @@
             "Password": "123456",
             "FullName": "Serqiiiooooo"
         }
+    },
+    "ItemById" : {
+        "POST": {
+            "Content": "New Item",
+            "ProjectId": 3951580
+        },
+        "PUT": {
+            "Checked": true
+        }
     }
 }

@@ -7,6 +7,17 @@
         "ErrorMessage": "Invalid input Data",
         "ErrorCode": 302
     },
+    "InvalidID": {
+        "ErrorMessage": "Invalid Id",
+        "ErrorCode": 301
+    },
+    "ShortItemName": {
+        "ErrorMessage": "Too Short Item Name",
+        "ErrorCode": 308
+    },
+    "InvalidParentId": {
+        "ErrorMessage": "Invalid Parent Item Id",
+        "ErrorCode": 303
     "ThereIsNoProyect": {
         "ErrorMessage": "You don't have access to this Project",
         "ErrorCode": 402
@@ -14,9 +25,5 @@
     "ShortNameProject": {
         "ErrorMessage": "Too Short Project Name",
         "ErrorCode": 305
-    },
-    "InvalidID": {
-        "ErrorMessage": "Invalid Id",
-        "ErrorCode": 301
     }
 }
