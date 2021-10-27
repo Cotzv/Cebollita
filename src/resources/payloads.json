@@ -10,7 +10,8 @@
         },
 
         "PUT": {
-            "Icon": "5"
+            "Icon": "5",
+            "EmptyContent": ""
         },
 
         "Invalid": {

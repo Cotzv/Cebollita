@@ -52,14 +52,15 @@ describe("negative test", () => {
             });
     }, 20000);
 
-    test('Verify that shows the required error with an empty name when  POST the request "/projects.json" endpoint is executed ', () => {
+    test('Verify that shows the required error with an unvalid authentication when  POST the request "/projects.json" endpoint is executed ', () => {
         return HttpRequestManager.makeRequest(
             "POST",
             projectsURI,
-            payloads.ProjectById.MissingContent
+            payloads.ProjectById.POST,
+            false
         )
             .then(function (response) {
-                expect(response.data).toEqual(errors.ShortNameProject);
+                expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
                 //console.log(error);
@@ -85,7 +86,7 @@ describe("negative test", () => {
             });
     }, 20000);
 
-    test('Verify that shows the required error with an alfabetic caracter value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
+    test('Verify that shows the required error with an alphabetic character value in a PUT request when "/projects/{id}.json" endpoint is executed', () => {
         return HttpRequestManager.makeRequest(
             "PUT",
             projectByIdURI.replace("{id}", "a"),
@@ -103,7 +104,7 @@ describe("negative test", () => {
             });
     }, 20000);
 
-    test('Verify that shows the required error with an alfanumeric caracter value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
+    test('Verify that shows the required error with an alphanumeric character value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
         return HttpRequestManager.makeRequest(
             "PUT",
             projectByIdURI.replace("{id}", "12*S"),
@@ -114,6 +115,40 @@ describe("negative test", () => {
                 expect(response.status).toBe(200);
                 expect(response.statusText).toMatch("OK");
                 expect(response.data).not.toEqual(errors.Authentication);
+            })
+            .catch(function (error) {
+                //console.log(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that end point shouldnt accept a number bigger than 14 the required error with an alphanumeric character value in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "PUT",
+            projectByIdURI.replace("{id}", "16"),
+            payloads.ProjectById.PUT
+        )
+            .then(function (response) {
+                console.log(response.data);
+                expect(response.status).not.toBe(200);
+                expect(response.statusText).not.toMatch("OK");
+            })
+            .catch(function (error) {
+                //console.log(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that end point shouldnt accept negative numbers in a PUT request when "/projects/{id}.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "PUT",
+            projectByIdURI.replace("{id}", "-5"),
+            payloads.ProjectById.PUT.EmptyContent
+        )
+            .then(function (response) {
+                console.log(response.data);
+                expect(response.status).not.toBe(200);
+                expect(response.statusText).not.toMatch("OK");
             })
             .catch(function (error) {
                 //console.log(error);
@@ -149,7 +184,7 @@ describe("negative test", () => {
             });
     }, 20000);
 
-    test('Verify that shows the required error with an unvalid authentication when DELETE request "/projects.json" endpoint is executed ', () => {
+    test('Verify that shows the required error with an invalid authentication when DELETE request "/projects.json" endpoint is executed ', () => {
         return HttpRequestManager.makeRequest(
             "DELETE",
             projectByIdURI.replace("{id}", "3951526"),
