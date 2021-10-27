@@ -4,7 +4,7 @@
     "createUser": "user.json",
     "items": "items.json",
     "itemById": "items/{id}.json",
-    "rootItemById": "items/{id}/RootItem.json"
+    "rootItemById": "items/{id}/RootItem.json",
     "getItemsOfAProyect": "projects/{id}/items.json",
     "getProyectsDoneItems": "projects/{id}/doneitems.json"
 }
