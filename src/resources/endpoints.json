@@ -1,5 +1,7 @@
 {
     "projects": "projects.json",
     "projectById": "projects/{id}.json",
-    "createUser": "user.json"
+    "createUser": "user.json",
+    "items": "items.json",
+    "itemById": "items/{id}.json"
 }
