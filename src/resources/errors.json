@@ -6,5 +6,10 @@
     "InvalidInputData": {
         "ErrorMessage": "Invalid input Data",
         "ErrorCode": 302
+    },
+    "InvalidId": {
+        "ErrorMessage": "Invalid Id",
+        "ErrorCode": 301
     }
+
 }

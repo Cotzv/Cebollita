@@ -1,0 +1,40 @@
+{
+    "ItemById" : {
+        "POST": {
+            "Content": "New Item",
+            "ProjectId": 3951580
+        },
+        "PUT": {
+            "Checked": true
+        },
+        "Negative" : {
+            "Spaces" : {
+                "Content": "       ",
+                "ProjectId": 3951580
+            },
+            "WithoutProject" : {
+                "Content": "New Item"
+            }
+        }, 
+        "Invalid": {
+            "NegativeNumber" :{
+                "Priority": -1
+            },
+            "DecimalNumber" :{
+                "Priority": 1.1
+            },
+            "Words" :{
+                "Priority": "Priority"
+            },
+            "Space" :{
+                "Priority": "    "
+            },
+            "Empty" :{
+                "Priority": ""
+            },
+            "NotExistent" :{
+                "Priority": 10000      
+            }
+        }
+    }
+}
