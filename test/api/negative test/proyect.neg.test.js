@@ -2,7 +2,7 @@ import HttpRequestManager from "../../../src/common/api/http.request.manager";
 import errors from "../../../src/resources/errors.json";
 import endPoints from "../../../src/resources/endpoints.json";
 import payloads from "../../../src/resources/payloads.json";
-
+import loggers from "../../../utils/loggers";
 const projectsURI = endPoints.projects;
 let projectByIdURI = endPoints.projectById;
 
@@ -16,6 +16,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.ThereIsNoProyect);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -32,6 +33,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -47,6 +49,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.ShortNameProject);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -63,6 +66,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -81,6 +85,7 @@ describe("negative test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -99,6 +104,7 @@ describe("negative test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -117,6 +123,7 @@ describe("negative test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -134,6 +141,7 @@ describe("negative test", () => {
                 expect(response.statusText).not.toMatch("OK");
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -151,6 +159,7 @@ describe("negative test", () => {
                 expect(response.statusText).not.toMatch("OK");
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -165,6 +174,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.InvalidID);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -179,6 +189,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.InvalidID);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -195,6 +206,7 @@ describe("negative test", () => {
                 expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });

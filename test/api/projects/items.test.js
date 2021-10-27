@@ -38,6 +38,7 @@ describe("Projects - Edit Tests", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });

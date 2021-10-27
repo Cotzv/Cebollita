@@ -21,9 +21,9 @@ describe("proyect test", () => {
                 expect(response.statusText).toMatch("OK");
                 expect(response.data).not.toEqual(errors.Authentication);
                 id = response.data.Id;
-                loggers.error(projectsURI);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -39,6 +39,7 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -52,6 +53,7 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -68,6 +70,7 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.ThereIsNoProyect);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -86,6 +89,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -104,6 +108,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -121,6 +126,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -134,6 +140,7 @@ describe("proyect test", () => {
                 expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -150,6 +157,7 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
@@ -166,6 +174,7 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
+                loggers.error(error);
                 //console.log(error);
                 throw error;
             });
