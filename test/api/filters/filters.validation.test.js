@@ -5,7 +5,7 @@ import errors from "../../../src/resources/errors.json";
 
 const filtersURI = endpoints.Filters;
 const filtersId = [0, -1, -5, -3];
-let filterKeysWiki = ['Id', 'Content', 'ItemsCount', 'Icon', 'ItemType'];
+let filterKeysWiki = ['Id', 'Content', 'ItemsCount', 'Icon', 'ItemType', 'Children'];
 
 describe("Filters Validation tests", () => {
     test.each`

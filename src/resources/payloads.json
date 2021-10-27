@@ -8,29 +8,23 @@
             "Content": "",
             "Icon": "4"
         },
-
         "PUT": {
             "Icon": "5",
             "EmptyContent": ""
         },
-
         "Invalid": {
             "NegativeNumber": {
                 "Icon": "-5"
             },
-
             "DecimalNumber": {
                 "Icon": "5.10"
             },
-
             "Words": {
                 "Icon": "Icon"
             },
-
             "AlphaNumeric": {
                 "Icon": "IconNumber5098@!@#$%^*"
             },
-
             "Empty": {
                 "Icon": ""
             }
@@ -43,6 +37,7 @@
             "FullName": "Serqiiiooooo"
         }
     },
+<<<<<<< HEAD
     "ItemById" : {
         "POST": {
             "Content": "New Item",
@@ -50,6 +45,15 @@
         },
         "PUT": {
             "Checked": true
+=======
+    "Filters": {
+        "POST": {
+            "Content": "My New Filter",
+            "Icon": "4"
+        },
+        "PUT": {
+            "Icon": "5"
+>>>>>>> Add negative tests for PUT, POST, DELETE
         }
     }
 }
