@@ -34,7 +34,7 @@ describe('Items Validation tests', () => {
             logger.error(error);
             throw error;
         })
-    }, 1000)
+    }, 10000)
 
     test.each `
         statusCode  | statusText    | key
@@ -45,7 +45,7 @@ describe('Items Validation tests', () => {
         ${200}      | ${'OK'}       | ${'Empty'}
         ${200}      | ${'OK'}       | ${'NotExistent'}
     `('Verify that an item is updated when a PUT request "/items/{id}.json" endpoint is executed using a $key value in "Priority" variable', ({statusCode, statusText, key}) => {
-        return HttpRequestManager.makeRequest('PUT', itemByIdURI.replace('{id}', id), payloads.ItemById.Invalid[key])
+        return HttpRequestManager.makeRequest('PUT', itemByIdURI.replace('{id}', id), payloads.ItemById.InvalidPriority[key])
         .then(function(response) {
             expect(response.status).toBe(statusCode);
             expect(response.statusText).toMatch(statusText);
@@ -56,4 +56,46 @@ describe('Items Validation tests', () => {
             throw error;
         })
     }, 20000)
+
+    test.each `
+        statusCode  | statusText    | key
+        ${200}      | ${'OK'}       | ${'NegativeNumber'}
+        ${200}      | ${'OK'}       | ${'DecimalNumber'}
+        ${200}      | ${'OK'}       | ${'Words'}
+        ${200}      | ${'OK'}       | ${'Space'}
+        ${200}      | ${'OK'}       | ${'Empty'}
+        ${200}      | ${'OK'}       | ${'NotExistent'}
+    `('Verify that an item is updated when a PUT request "/items/{id}.json" endpoint is executed using a $key value in "DueDate" variable', ({statusCode, statusText, key}) => {
+        return HttpRequestManager.makeRequest('PUT', itemByIdURI.replace('{id}', id), payloads.ItemById.InvalidDueDate[key])
+        .then(function(response) {
+            expect(response.status).toBe(statusCode);
+            expect(response.statusText).toMatch(statusText);
+            expect(response.data).toEqual(errors.InvalidInputData);
+        })
+        .catch(function (error) {
+            logger.error(error);
+            throw error;
+        })
+    }, 20000)
+
+    test.each `
+        statusCode  | statusText    | key
+        ${200}      | ${'OK'}       | ${'Null'}
+        ${200}      | ${'OK'}       | ${'DecimalNumber'}
+        ${200}      | ${'OK'}       | ${'Words'}
+        ${200}      | ${'OK'}       | ${'Space'}
+        ${200}      | ${'OK'}       | ${'Empty'}
+        ${200}      | ${'OK'}       | ${'NotExistent'}
+    `('Verify that an item is updated when a PUT request "/items/{id}.json" endpoint is executed using a $key value in "ParentId" variable', ({statusCode, statusText, key})=> {
+        return HttpRequestManager.makeRequest('PUT', itemByIdURI.replace('{id}', id), payloads.ItemById.InvalidParentId[key])
+        .then(function(response){
+            expect(response.status).toBe(statusCode);
+            expect(response.statusText).toBe(statusText);
+            expect(response.data).toEqual(errors.InvalidParentId);
+        })
+        .catch(function(error){
+            logger.error(error);
+            throw error;
+        })
+    }, 200000)
 })
