@@ -24,7 +24,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 18000);
@@ -40,7 +39,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 18000);
@@ -54,7 +52,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -71,7 +68,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -90,7 +86,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -109,7 +104,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -127,7 +121,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -141,7 +134,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -158,7 +150,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -175,7 +166,6 @@ describe("proyect test", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);

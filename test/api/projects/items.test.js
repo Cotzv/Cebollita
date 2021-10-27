@@ -22,7 +22,7 @@ describe("Projects - Edit Tests", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
+
                 throw error;
             });
     }, 20000);
@@ -39,7 +39,6 @@ describe("Projects - Edit Tests", () => {
             })
             .catch(function (error) {
                 loggers.error(error);
-                //console.log(error);
                 throw error;
             });
     }, 20000);
@@ -68,7 +67,6 @@ describe("Projects - Edit Tests", () => {
                     expect(response.data).toEqual(errors.InvalidInputData);
                 })
                 .catch(function (error) {
-                    // console.log(error);
                     loggers.error(error);
                     throw error;
                 });
@@ -97,7 +95,6 @@ describe("Projects - Edit Tests", () => {
                     expect(response.data).toEqual(errors.InvalidInputData);
                 })
                 .catch(function (error) {
-                    // console.log(error);
                     loggers.error(error);
                     throw error;
                 });
