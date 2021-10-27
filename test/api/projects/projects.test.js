@@ -21,10 +21,9 @@ describe("proyect test", () => {
                 expect(response.statusText).toMatch("OK");
                 expect(response.data).not.toEqual(errors.Authentication);
                 id = response.data.Id;
-                loggers.error(projectsURI);
             })
             .catch(function (error) {
-                //console.log(error);
+                loggers.error(error);
                 throw error;
             });
     }, 18000);
@@ -39,7 +38,6 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
-                //console.log(error);
                 loggers.error(error);
                 throw error;
             });
@@ -53,7 +51,22 @@ describe("proyect test", () => {
                 expect(response.data).not.toEqual(errors.Authentication);
             })
             .catch(function (error) {
-                //console.log(error);
+                loggers.error(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that 200 OK status code resutl when a GET of a proyect the request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "GET",
+            projectByIdURI.replace("{id}", "3951526")
+        )
+            .then(function (response) {
+                expect(response.status).toBe(200);
+                expect(response.statusText).toMatch("OK");
+                expect(response.data).not.toEqual(errors.ThereIsNoProyect);
+            })
+            .catch(function (error) {
                 loggers.error(error);
                 throw error;
             });
@@ -72,7 +85,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
-                //console.log(error);
+                loggers.error(error);
                 throw error;
             });
     }, 20000);
@@ -90,7 +103,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
-                //console.log(error);
+                loggers.error(error);
                 throw error;
             });
     }, 20000);
@@ -107,7 +120,7 @@ describe("proyect test", () => {
                 postId = response.data.Id;
             })
             .catch(function (error) {
-                //console.log(error);
+                loggers.error(error);
                 throw error;
             });
     }, 20000);
@@ -120,7 +133,39 @@ describe("proyect test", () => {
                 expect(response.data).toEqual(errors.Authentication);
             })
             .catch(function (error) {
-                //console.log(error);
+                loggers.error(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that 200 OK status code resutl when a GET items of a proyect when request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "GET",
+            endPoints.getItemsOfAProyect.replace("{id}", "3951526")
+        )
+            .then(function (response) {
+                expect(response.status).toBe(200);
+                expect(response.statusText).toMatch("OK");
+                expect(response.data).not.toEqual(errors.Authentication);
+            })
+            .catch(function (error) {
+                loggers.error(error);
+                throw error;
+            });
+    }, 20000);
+
+    test('Verify that 200 OK status code resutl when a GET done items of a proyect when request "/projects.json" endpoint is executed ', () => {
+        return HttpRequestManager.makeRequest(
+            "GET",
+            endPoints.getProyectsDoneItems.replace("{id}", "3951526")
+        )
+            .then(function (response) {
+                expect(response.status).toBe(200);
+                expect(response.statusText).toMatch("OK");
+                expect(response.data).not.toEqual(errors.Authentication);
+            })
+            .catch(function (error) {
+                loggers.error(error);
                 throw error;
             });
     }, 20000);
