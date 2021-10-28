@@ -18,5 +18,9 @@
     "InvalidName": {
         "ErrorMessage": "Invalid FullName",
         "ErrorCode": 306
+    },
+    "InvalidInputData": {
+        "ErrorMessage": "Invalid input Data",
+        "ErrorCode": 302
     }
 }

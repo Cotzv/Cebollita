@@ -25,5 +25,22 @@
             "FullName": "",
             "Password": "test"
         }
+    },
+    "InvalidName": {
+        "NegativeNumber": {
+            "FullName": -1
+        },
+        "DecimalNumber": {
+            "FullName": 1.1
+        },
+        "Words": {
+            "FullName": "FullName"
+        },
+        "Space": {
+            "FullName": "    "
+        },
+        "Empty": {
+            "FullName": ""
+        }
     }
 }
