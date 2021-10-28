@@ -8,29 +8,23 @@
             "Content": "",
             "Icon": "4"
         },
-
         "PUT": {
             "Icon": "5",
             "EmptyContent": ""
         },
-
         "Invalid": {
             "NegativeNumber": {
                 "Icon": "-5"
             },
-
             "DecimalNumber": {
                 "Icon": "5.10"
             },
-
             "Words": {
                 "Icon": "Icon"
             },
-
             "AlphaNumeric": {
                 "Icon": "IconNumber5098@!@#$%^*"
             },
-
             "Empty": {
                 "Icon": ""
             }
@@ -43,13 +37,25 @@
             "FullName": "Serqiiiooooo"
         }
     },
-    "ItemById" : {
+    "ItemById": {
         "POST": {
             "Content": "New Item",
             "ProjectId": 3951580
         },
         "PUT": {
             "Checked": true
+        }
+    },
+    "Filters": {
+        "POST": {
+            "Content": "My New Filter",
+            "Icon": "4"
+        },
+        "PUT": {
+            "Icon": "5"
+        },
+        "ITEM": {
+            "Content": "My new Item"
         }
     }
 }

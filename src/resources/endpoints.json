@@ -8,5 +8,11 @@
     "getItemsOfAProyect": "projects/{id}/items.json",
     "getProyectsDoneItems": "projects/{id}/doneitems.json",
     "user": "user.json",
-    "userById": "user/{id}.json"
+    "userById": "user/{id}.json",
+    "Filters": {
+        "filters": "filters.json",
+        "filtersById": "filters/{id}.json",
+        "filtersIdItems": "filters/{id}/items.json",
+        "filtersIdDoneItems": "filters/{id}/doneitems.json"
+    }
 }
