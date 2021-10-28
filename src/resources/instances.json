@@ -1,7 +1,7 @@
 {
     "validCredentials": {
         "baseUrl": "https://todo.ly",
-        "auth": { "username": "marcandeacabrera@gmail.com", "password": "12345nacram." }
+        "auth": { "username": "serqio.kay@gmail.com", "password": "1234567890" }
     },
     "invalidCredentials": {
         "baseUrl": "https://todo.ly",
