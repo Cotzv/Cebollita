@@ -24,7 +24,6 @@ describe("Filters Validation tests", () => {
                     expect(response.status).toBe(statusCode);
                     expect(response.statusText).toMatch(statusText);
                     expect(Object.keys(response.data)).toEqual(filterKeysWiki);
-
                 })
                 .catch(function (error) {
                     throw error;

@@ -37,15 +37,15 @@
             "FullName": "Serqiiiooooo"
         }
     },
-<<<<<<< HEAD
-    "ItemById" : {
+    "ItemById": {
         "POST": {
             "Content": "New Item",
             "ProjectId": 3951580
         },
         "PUT": {
             "Checked": true
-=======
+        }
+    },
     "Filters": {
         "POST": {
             "Content": "My New Filter",
@@ -53,7 +53,9 @@
         },
         "PUT": {
             "Icon": "5"
->>>>>>> Add negative tests for PUT, POST, DELETE
+        },
+        "ITEM": {
+            "Content": "My new Item"
         }
     }
 }

@@ -34,7 +34,7 @@ describe("Filters Negative tests", () => {
                 logger.error(error);
                 throw error;
             });
-    });
+    }, 6000);
 
 
     test('Verify that POST request does not insert a new Filter with valid data', () => {
@@ -49,10 +49,10 @@ describe("Filters Negative tests", () => {
                 logger.error(error);
                 throw error;
             });
-    });
+    }, 6000);
 
     test('Verify that PUT request does not insert a new Filter with valid data', () => {
-        return HttpRequestManager.makeRequest('POST', filtersURI.filtersById.replace("{id}", filtersId[0]), payload.Filters.PUT)
+        return HttpRequestManager.makeRequest('PUT', filtersURI.filtersById.replace("{id}", filtersId[0]), payload.Filters.PUT)
             .then(response => {
                 expect(response.status).toBe(200);
                 expect(response.statusText).toMatch("OK");
@@ -66,7 +66,7 @@ describe("Filters Negative tests", () => {
     });
 
     test('Verify that DELETE request does not insert a new Filter with valid data', () => {
-        return HttpRequestManager.makeRequest('POST', filtersURI.filtersById.replace("{id}", filtersId[0]))
+        return HttpRequestManager.makeRequest('DELETE', filtersURI.filtersById.replace("{id}", filtersId[0]))
             .then(response => {
                 expect(response.status).toBe(200);
                 expect(response.statusText).toMatch("OK");
@@ -77,5 +77,19 @@ describe("Filters Negative tests", () => {
                 logger.error(error);
                 throw error;
             });
-    });
+    }, 6000);
+
+    test('Verify that POST request does not insert a new Item in a Filter with valid data', () => {
+        return HttpRequestManager.makeRequest('POST', filtersURI.filtersIdItems.replace("{id}", filtersId[0]), payload.Filters.ITEM)
+            .then(response => {
+                expect(response.status).toBe(200);
+                expect(response.statusText).toMatch("OK");
+                expect(response.data).not.toEqual(errors.Authentication);
+                expect(response.data).toEqual(errors.NotSupportedFeature);
+            })
+            .catch((error) => {
+                logger.error(error);
+                throw error;
+            });
+    }, 6000);
 });
