@@ -28,7 +28,7 @@ describe("Filters Negative tests", () => {
                 expect(response.status).toBe(200);
                 expect(response.statusText).toMatch("OK");
                 expect(response.data).not.toEqual(errors.Authentication);
-                expect(response.data).toEqual(errors.InvalidId);
+                expect(response.data).toEqual(errors.InvalidID);
             })
             .catch((error) => {
                 logger.error(error);
