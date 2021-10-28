@@ -6,5 +6,7 @@
     "itemById": "items/{id}.json",
     "rootItemById": "items/{id}/RootItem.json",
     "getItemsOfAProyect": "projects/{id}/items.json",
-    "getProyectsDoneItems": "projects/{id}/doneitems.json"
+    "getProyectsDoneItems": "projects/{id}/doneitems.json",
+    "user": "user.json",
+    "userById": "user/{id}.json"
 }
