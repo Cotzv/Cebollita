@@ -1,0 +1,26 @@
+{
+    "Authentication": {
+        "ErrorMessage": "Account doesn't exist",
+        "ErrorCode": 105
+    },
+    "InvalidEmail": {
+        "ErrorMessage": "Invalid Email Address",
+        "ErrorCode": 307
+    },
+    "ExistingAccount": {
+        "ErrorMessage": "Account with this email address already exists",
+        "ErrorCode": 201
+    },
+    "ShortPassword": {
+        "ErrorMessage": "Password too short",
+        "ErrorCode": 202
+    },
+    "InvalidName": {
+        "ErrorMessage": "Invalid FullName",
+        "ErrorCode": 306
+    },
+    "InvalidInputData": {
+        "ErrorMessage": "Invalid input Data",
+        "ErrorCode": 302
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "UserById": {
+        "POST": {
+            "Email": "test@no-reply.com",
+            "FullName": "Testing Purposes",
+            "Password": "test"
+        },
+        "PUT": {
+            "FullName": "Tested Account"
+        }
+    },
+    "Negative": {
+        "InvalidEmail": {
+            "Email": "test",
+            "FullName": "Testing Purposes",
+            "Password": "test"
+        },
+        "EmptyPassword": {
+            "Email": "passtest@no-reply.com",
+            "FullName": "Negative Testing Purposes",
+            "Password": ""
+        },
+        "EmptyName": {
+            "Email": "fullnametest@no-reply.com",
+            "FullName": "",
+            "Password": "test"
+        }
+    },
+    "InvalidName": {
+        "NegativeNumber": {
+            "FullName": -1
+        },
+        "DecimalNumber": {
+            "FullName": 1.1
+        },
+        "Words": {
+            "FullName": "FullName"
+        },
+        "Space": {
+            "FullName": "    "
+        },
+        "Empty": {
+            "FullName": ""
+        }
+    }
+}
